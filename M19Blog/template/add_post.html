@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить пост</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добавить новый пост</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="title">Заголовок:</label>
+        <input type="text" name="title" id="title" required maxlength="100">
+
+        <label for="content">Содержание:</label>
+        <textarea name="content" id="content" required></textarea>
+
+        <button type="submit">Создать пост</button>
+    </form>
+</body>
+</html>
+
